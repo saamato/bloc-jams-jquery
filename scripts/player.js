@@ -10,10 +10,15 @@ class Player {
     const sec_num = parseInt(timeInSeconds, 10);
     const seconds = Math.floor(sec_num % 60);
     const minutes = Math.floor((sec_num % 3600) / 60);
-    const lessThan = '0:0' + seconds;
-    if (seconds <= 10) {
+    const lessThan = '0' + seconds;
+    if (seconds <= 9 && minutes < 1) {
       return lessThan;
-      } else {
+
+    } if (seconds <=9 && minutes >= 1) {
+      return minutes + ":" + lessThan;
+
+
+  } else {
     return minutes + ":" + seconds;
   }
 
